@@ -1,0 +1,31 @@
+{% extends "components/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mt-3">
+                <div class="card-header d-flex justify-content-between">
+                    Crear Usuario
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Rellena los campos con los datos necesarios</div>
+
+                    <form action="{% url 'reunion:user_create' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group mt-3">
+                            {{form.as_p}}
+                        </div>
+                        {% for error in field.errors %}
+                        <small style="color: red">{{ error }}</small>
+                        {% endfor %}
+                        <div class="d-flex justify-content-center mt-3">
+                            <input type="submit" value="Crear Reunion" class="btn btn-primary mt-3"/>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

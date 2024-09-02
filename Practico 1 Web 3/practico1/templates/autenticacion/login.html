@@ -1,0 +1,27 @@
+{% extends "components/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mt-3">
+                <div class="card-header d-flex justify-content-between">
+                    Iniciar Sesión
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Rellena los campos con los datos necesarios</div>
+                    <form action="{% url 'reunion:login' %}" method="POST">
+                        {% csrf_token %}
+
+                        {{form.as_p}}
+                        <div class="card-body d-flex justify-content-between mt-3">
+                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                            <a class="btn btn-primary" href="{% url 'reunion:user_create' %}">Registrarse</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

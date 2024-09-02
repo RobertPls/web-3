@@ -1,0 +1,18 @@
+{% extends "components/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4">
+            <div class="card mt-3">
+                <div class="card-header d-flex justify-content-center">
+                    Sesion Cerrada
+                </div>
+                <div class="card-body d-flex justify-content-center">
+                    <a class="btn btn-primary" href="{% url 'reunion:login' %}">Iniciar Sesion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

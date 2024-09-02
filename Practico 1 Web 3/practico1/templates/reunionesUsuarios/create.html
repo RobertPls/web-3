@@ -1,0 +1,28 @@
+{% extends "components/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mt-3">
+                <div class="card-header">
+                    Edicion de participantes de la reunion
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Agregar un participante para la reunion "{{reunion.nombre}}"</div>
+                    <form action="{% url 'reunion:reuniones_usuarios_create' reunion.pk%}" method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group mt-3">
+                            {{form.as_p}}
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3">
+                            <input type="submit" value="Agregar" class="btn btn-primary mt-3"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

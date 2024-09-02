@@ -1,0 +1,6 @@
+from .extra_serializers import UserSimpleSerializer,GenerosDelJuegoSerializer,JuegosDelGeneroSerializer
+from .genero_viewset import GeneroSerializer, GeneroViewSet
+from .juego_viewset import JuegoSerializer, JuegoViewSet
+from .user_viewset import UserViewSet, UserSerializer
+from .genero_juego_viewset import GeneroJuegoSerializer, GeneroJuegoViewSet
+from .token_viewset import MyTokenObtainPairView
